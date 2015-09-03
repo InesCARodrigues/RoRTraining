@@ -19,7 +19,11 @@
         <span class="icon-bar"></span>
       </button>
       <!-- isto é uma erb tag e so funciona porque tenho a extençao .erb que me permite usar ruby em paginas html-->
-      <%= link_to 'Nhe', root_path, class: 'navbar-brand' %>
+      <%= link_to root_path, class: 'navbar-brand' do %>
+          <i class="fa fa-terminal fa-inverse"></i>
+          <strong style="color:#FFFFFF;">RoR APP</strong>
+      <% end %>
+      
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
