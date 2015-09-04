@@ -2,3 +2,27 @@
     <h1>Welcome to my RoR training APP</h1>
     <h2>Because Ruby on Rails is awesome!</h2>
 </div>
+
+<div class="row">
+    
+    <div class="col-md-6">
+        <div class="well">
+            
+            <h2 class="text-center">Basic Plan</h2>
+            <h4> Sign up for free to access to stuffs :3</h4>
+            <%= link_to "Sign up free",  new_user_registration_path, class: "btn btn-primary btn-lg btn-block" %>
+        </div>
+    </div>
+    
+    <div class="col-md-6">
+        <div class="well">
+            
+            <h2 class="text-center">Pro Plan</h2>
+            <h4> You pay and you get exclusive stuffs! :3</h4>
+            <%= link_to "Sign up pro account",  new_user_registration_path, class: "btn btn-success btn-lg btn-block" %>
+            
+        </div>
+        
+    </div>
+        
+</div>
