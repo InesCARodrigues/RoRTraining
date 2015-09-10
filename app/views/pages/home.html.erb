@@ -1,8 +1,3 @@
-
-
-<%=link_to "Edit your profile here!", new_user_profile_path(current_user) if user_signed_in? %>
-
-
 <div class="jumbotron text-center">
     <h1>Welcome to my RoR training APP</h1>
     <h2>Because Ruby on Rails is awesome!</h2>
@@ -10,24 +5,51 @@
 
 <div class="row">
     
-    <div class="col-md-6">
+    <% if user_signed_in? %>
+        <div class="col-md-6">
+            <div class="well">
+                <h2 class="text-center">Your profile</h2>
+                <% if current_user.profile %> <!-- verifica se o user tem um perfil feito ou nao -->
+                    <div class="text-center">
+                        <%= link_to "Edit profile", "#", class: "btn btn-default btn-lg" %>
+                        <%= link_to "See your profile", user_path(current_user), class: "btn btn-default btn-lg" %>
+                    </div>
+                   
+                <% else %>
+                    <%=link_to "Edit your profile here!", new_user_profile_path(current_user), class: "btn btn-primary btn-lg btn-block " %>
+                <% end %>
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="well">
+                <h2 class="text-center">Yay! :D I <3 Ruby</h2>
+                <p>Lorem ipsum dolor sit amet, diam augue assentior pri no, no homero nemore corpora mel. Ad erat lorem legimus eam.</p>
+                <%= link_to "Lorem ipsum", "#",class: "btn btn-default btn-lg btn-block " %>
+            </div>
+        </div>
+        
+    <% else %>
+      <div class="col-md-6">
         <div class="well">
             
             <h2 class="text-center">Basic Plan</h2>
             <h4> Sign up for free to access to stuffs :3</h4>
             <%= link_to "Sign up free",  new_user_registration_path(plan: @basic_plan.id), class: "btn btn-primary btn-lg btn-block" %>
         </div>
-    </div>
-    
-    <div class="col-md-6">
-        <div class="well">
-            
-            <h2 class="text-center">Pro Plan</h2>
-            <h4> You pay and you get exclusive stuffs! :3</h4>
-            <%= link_to "Sign up pro account",  new_user_registration_path(plan: @pro_plan.id), class: "btn btn-success btn-lg btn-block" %>
-            
         </div>
         
-    </div>
+        <div class="col-md-6">
+            <div class="well">
+                
+                <h2 class="text-center">Pro Plan</h2>
+                <h4> You pay and you get exclusive stuffs! :3</h4>
+                <%= link_to "Sign up pro account",  new_user_registration_path(plan: @pro_plan.id), class: "btn btn-success btn-lg btn-block" %>
+                
+            </div>
+            
+        </div>
+    <% end %>
+  
         
 </div>
