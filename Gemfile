@@ -19,6 +19,9 @@ gem 'font-awesome-sass', '4.2.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 
+# Paperclip -> allows to upload images etc..
+gem 'paperclip', '4.3.0'
+
 
 # Stripe for payments API
 gem 'stripe', '1.16.1'
