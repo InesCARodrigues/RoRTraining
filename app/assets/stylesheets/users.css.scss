@@ -1,0 +1,23 @@
+
+.job-icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #000000;
+    border-radius:5px;
+    color:#FFFFFF;
+    background-color:#385E71;
+    text-align: center;
+}
+
+.well.profile-descr > h4 {
+    margin-top:0px;
+}
+
+.avatar-style {
+
+    border:5px solid #385E71;
+-webkit-box-shadow: 1px 1px 3px 0px rgba(50, 50, 50, 0.7);
+-moz-box-shadow:    1px 1px 3px 0px rgba(50, 50, 50, 0.7);
+box-shadow:         1px 1px 3px 0px rgba(50, 50, 50, 0.7);
+}
